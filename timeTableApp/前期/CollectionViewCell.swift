@@ -9,9 +9,6 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        classLabel.numberOfLines = 0
-        roomLabel.numberOfLines = 0
         
     }
 }

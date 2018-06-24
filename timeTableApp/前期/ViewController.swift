@@ -147,7 +147,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return label
     }
 
-
+    @IBAction func settingBtn(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "settingSegue", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

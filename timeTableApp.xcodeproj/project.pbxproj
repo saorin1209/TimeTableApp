@@ -12,6 +12,8 @@
 		A2494611205F8DF9004CFB0E /* Edit2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2494610205F8DF9004CFB0E /* Edit2.swift */; };
 		A2494620206255A5004CFB0E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249461E206255A5004CFB0E /* CollectionViewCell.swift */; };
 		A2494621206255A5004CFB0E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A249461F206255A5004CFB0E /* CollectionViewCell.xib */; };
+		A260955C20DE865100DAA364 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A260955B20DE865100DAA364 /* SettingViewController.swift */; };
+		A260955E20DF5BE700DAA364 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A260955D20DF5BE700DAA364 /* TableViewCell.swift */; };
 		A29462182068EA6B00B0C692 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29462162068EA6B00B0C692 /* CollectionViewCell2.swift */; };
 		A29462192068EA6B00B0C692 /* CollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29462172068EA6B00B0C692 /* CollectionViewCell2.xib */; };
 		A2DEFA6C2057D3A4006D09A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEFA6B2057D3A4006D09A7 /* AppDelegate.swift */; };
@@ -21,7 +23,6 @@
 		A2DEFA762057D3A4006D09A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2DEFA742057D3A4006D09A7 /* LaunchScreen.storyboard */; };
 		A2DEFA812057D3A4006D09A7 /* timeTableAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEFA802057D3A4006D09A7 /* timeTableAppTests.swift */; };
 		A2DEFA8C2057D3A4006D09A7 /* timeTableAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEFA8B2057D3A4006D09A7 /* timeTableAppUITests.swift */; };
-		A2F5465720CFF88F00C44A7D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F5465620CFF88F00C44A7D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		A2494610205F8DF9004CFB0E /* Edit2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edit2.swift; sourceTree = "<group>"; };
 		A249461E206255A5004CFB0E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A249461F206255A5004CFB0E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		A260955B20DE865100DAA364 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A260955D20DF5BE700DAA364 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A29462162068EA6B00B0C692 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
 		A29462172068EA6B00B0C692 /* CollectionViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell2.xib; sourceTree = "<group>"; };
 		A2DEFA682057D3A4006D09A7 /* timeTableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timeTableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +65,6 @@
 		A2DEFA872057D3A4006D09A7 /* timeTableAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timeTableAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DEFA8B2057D3A4006D09A7 /* timeTableAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTableAppUITests.swift; sourceTree = "<group>"; };
 		A2DEFA8D2057D3A4006D09A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2F5465620CFF88F00C44A7D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,8 @@
 				A249460E205F8AC1004CFB0E /* Edit.swift */,
 				A249461E206255A5004CFB0E /* CollectionViewCell.swift */,
 				A249461F206255A5004CFB0E /* CollectionViewCell.xib */,
-				A2F5465620CFF88F00C44A7D /* TableViewController.swift */,
+				A260955B20DE865100DAA364 /* SettingViewController.swift */,
+				A260955D20DF5BE700DAA364 /* TableViewCell.swift */,
 			);
 			path = "前期";
 			sourceTree = "<group>";
@@ -304,7 +307,8 @@
 				A2DEFA6E2057D3A4006D09A7 /* ViewController.swift in Sources */,
 				A2494620206255A5004CFB0E /* CollectionViewCell.swift in Sources */,
 				A249460F205F8AC1004CFB0E /* Edit.swift in Sources */,
-				A2F5465720CFF88F00C44A7D /* TableViewController.swift in Sources */,
+				A260955E20DF5BE700DAA364 /* TableViewCell.swift in Sources */,
+				A260955C20DE865100DAA364 /* SettingViewController.swift in Sources */,
 				A2DEFA6C2057D3A4006D09A7 /* AppDelegate.swift in Sources */,
 				A2494611205F8DF9004CFB0E /* Edit2.swift in Sources */,
 				A29462182068EA6B00B0C692 /* CollectionViewCell2.swift in Sources */,
