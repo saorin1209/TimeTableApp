@@ -4,16 +4,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+class PrecedingPeriodViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     static var cellNumber: Int = 0
+    static var precedingPeriodClassArray: [Class] = []
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    static var testArray: [Class] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -54,43 +53,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let label6 = makeNumLabel(y: 568, text: "6")
         self.view.addSubview(label6)
-        
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
-        
-//        取得
-        if let data = UserDefaults.standard.object(forKey: "TimeTable") as? Data, let array = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Class] {
-            ViewController.testArray = array
-            print("array:\(array)")
-        } else {
-            print("Error")
+        // 取得
+        if let data = UserDefaults.standard.object(forKey: "PrecedingPeriodTimeTable") as? Data, let array = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Class] {
+            PrecedingPeriodViewController.precedingPeriodClassArray = array
         }
-        print("testArray:\(ViewController.testArray)")
         collectionView.reloadData()
     }
     
-    
-//    セルが選択された時
+    // セルが選択された時
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        ViewController.cellNumber = indexPath.row
-        
-        if ViewController.cellNumber == indexPath.row {
-            print("セル番号:\(indexPath.row)")
-        }
-        
+        PrecedingPeriodViewController.cellNumber = indexPath.row
         performSegue(withIdentifier: "Modal1", sender: self)
     }
-  
     
-//    セルの内容
+    // セルの内容
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.backgroundColor = UIColor.groupTableViewBackground
         
-        if let data = ViewController.testArray.first(where: { $0.cellNumber == indexPath.row }) {
+        if let data = PrecedingPeriodViewController.precedingPeriodClassArray.first(where: { $0.cellNumber == indexPath.row }) {
             cell.classLabel.text = data.className
             cell.roomLabel.text = data.roomName
         } else {
@@ -100,61 +84,47 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
-//    セクション数
+    // セクション数
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-       return 1
+        return 1
     }
     
-//    セル数
+    // セル数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-      return 36
+        return 36
     }
     
-//    セルのサイズ
+    // セルのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = CGSize(width: collectionView.frame.width / 6 - 1, height: collectionView.frame.height / 6 - 1)
-        
         return cellSize
     }
-    //    余白
+    
+    // 余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-
-    //    行の余白
+    
+    // 行の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-
-    //    列の余白
+    
+    // 列の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
     
-//    曜日ラベル
+    // 曜日ラベル
     func makeLabel(x: CGFloat,text: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: x, y: 78, width: 18, height: 21))
         label.text = text
-        
         return label
     }
-//    数字ラベル
+    // 数字ラベル
     func makeNumLabel(y: CGFloat, text: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: 2, y: y, width: 20, height: 27))
         label.text = text
-        
         return label
     }
-
-    @IBAction func settingBtn(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "settingSegue", sender: nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
 }
